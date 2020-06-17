@@ -10,6 +10,7 @@ class TodoList extends Component {
 		this.remove = this.remove.bind(this);
 		this.update = this.update.bind(this);
 		this.toggleCompletion = this.toggleCompletion.bind(this);
+		this.toggleLine = this.toggleLine.bind(this);
 	}
 
 	create (newTodo) {
@@ -38,6 +39,7 @@ class TodoList extends Component {
 		});
 	}
 
+	// will line-through as I click on text
 	toggleCompletion (id) {
 		const updateTodos = this.state.todos.map((todo) => {
 			if (todo.id === id) {
@@ -46,6 +48,18 @@ class TodoList extends Component {
 			return todo;
 		});
 		this.setState({ todos: updateTodos });
+	}
+
+	// will line-through as I click on checkbox
+	toggleLine (id) {
+		this.setState({
+			todos: this.state.todos.map((todo) => {
+				if (todo.id === id) {
+					return { ...todo, completed: !todo.completed };
+				}
+				return todo;
+			})
+		});
 	}
 
 	render () {
@@ -59,6 +73,7 @@ class TodoList extends Component {
 					updateTodo={this.update}
 					completed={todo.completed}
 					toggleTodo={this.toggleCompletion}
+					toggleLineThrough={this.toggleLine}
 				/>
 			);
 		});

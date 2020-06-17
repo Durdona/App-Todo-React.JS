@@ -13,6 +13,7 @@ class TodoItem extends Component {
 		this.handleUpdate = this.handleUpdate.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleToggle = this.handleToggle.bind(this);
+		this.handleLineThrough = this.handleLineThrough.bind(this);
 	}
 
 	handleRemove (id) {
@@ -41,6 +42,11 @@ class TodoItem extends Component {
 	handleToggle (evt) {
 		this.props.toggleTodo(this.props.id);
 	}
+
+	handleLineThrough (evt) {
+		this.props.toggleLineThrough(this.props.id);
+	}
+
 	render () {
 		let result;
 		if (this.state.isEditing) {
@@ -64,8 +70,16 @@ class TodoItem extends Component {
 					<li onClick={this.handleToggle} className={this.props.completed ? "completed" : ""}>
 						{this.props.task}
 					</li>
-					<button onClick={this.toggleForm}>Edit</button>
-					<button onClick={this.handleRemove}>Delete</button>
+					<div className="Todo-buttons">
+						<input type="checkbox" onChange={this.handleLineThrough} />
+
+						<button onClick={this.toggleForm}>
+							<i className="far fa-edit" />
+						</button>
+						<button onClick={this.handleRemove}>
+							<i className="fas fa-trash" />
+						</button>
+					</div>
 				</div>
 			);
 		}
