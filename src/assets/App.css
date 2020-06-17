@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Poppins', sans-serif;
+	font-weight: 200;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+html {
+	background-image: url("../assets/background.svg");
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
