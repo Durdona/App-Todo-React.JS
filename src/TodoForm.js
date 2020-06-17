@@ -18,7 +18,7 @@ class TodoForm extends Component {
 	}
 	handleSubmit (evt) {
 		evt.preventDefault(); // parent will pass a function as a props now
-		this.props.createTodo({ ...this.state, id: uuidv4() }); // adding uuid to existing state
+		this.props.createTodo({ ...this.state, id: uuidv4(), completed: false }); // adding uuid to existing state
 		this.setState({ task: "" });
 	}
 	render () {
