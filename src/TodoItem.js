@@ -6,7 +6,8 @@ class TodoItem extends Component {
 		super(props);
 		this.state = {
 			isEditing: false,
-			task: this.props.task
+			task: this.props.task,
+			isChecked: false
 		}; // added task to make controlled input
 		this.handleRemove = this.handleRemove.bind(this);
 		this.toggleForm = this.toggleForm.bind(this);

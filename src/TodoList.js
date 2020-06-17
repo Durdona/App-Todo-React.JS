@@ -15,12 +15,13 @@ class TodoList extends Component {
 
 	create (newTodo) {
 		this.setState({
-			todos: [ ...this.state.todos, newTodo ] // making a copy of existing todos and adding a newTodo
+			todos: [ ...this.state.todos, newTodo ] // copying all todos and adding newTodo using a spread operator
 		});
 	}
-
+	// passing to a child as a props
 	remove (id) {
 		this.setState({
+			//  using filter() method in order not to mutate an original state
 			todos: this.state.todos.filter((t) => {
 				return t.id !== id;
 			})
@@ -74,7 +75,7 @@ class TodoList extends Component {
 					completed={todo.completed}
 					toggleTodo={this.toggleCompletion}
 					toggleLineThrough={this.toggleLine}
-				/>
+				/> // instead of arrow function for better performance we are using  passing functions as a props to a child
 			);
 		});
 		return (
