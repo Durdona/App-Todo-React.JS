@@ -5,8 +5,9 @@ import TodoItem from "./TodoItem";
 class TodoList extends Component {
 	constructor (props) {
 		super(props);
-		this.state = { todos: [ { task: "Stay Focused" }, { task: "Prioritize Goal" }, { task: "Keep Practicing" } ] };
+		this.state = { todos: [] };
 		this.create = this.create.bind(this);
+		this.remove = this.remove.bind(this);
 	}
 
 	create (newTodo) {
@@ -15,9 +16,17 @@ class TodoList extends Component {
 		});
 	}
 
+	remove (id) {
+		this.setState({
+			todos: this.state.todos.filter((t) => {
+				return t.id !== id;
+			})
+		});
+	}
+
 	render () {
 		const todos = this.state.todos.map((todo) => {
-			return <TodoItem task={todo.task} />;
+			return <TodoItem key={todo.id} task={todo.task} id={todo.id} removeTodo={this.remove} />;
 		});
 		return (
 			<div>

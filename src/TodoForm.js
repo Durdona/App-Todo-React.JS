@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 class TodoForm extends Component {
 	//creating  a controlled input with state
@@ -17,12 +18,12 @@ class TodoForm extends Component {
 	}
 	handleSubmit (evt) {
 		evt.preventDefault(); // parent will pass a function as a props now
-		this.props.createTodo(this.state);
+		this.props.createTodo({ ...this.state, id: uuidv4() }); // adding uuid to existing state
 		this.setState({ task: "" });
 	}
 	render () {
 		return (
-			<form onSubmit={this.handleSubmit}>
+			<form onSubmit={this.handleSubmit} autoComplete="off">
 				<label htmlFor="task">New Todo</label>
 				<input
 					type="text"
