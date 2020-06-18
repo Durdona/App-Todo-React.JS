@@ -1,1 +1,52 @@
+.TodoForm {
+	margin-top: 3rem;
+	display: flex;
+	flex-wrap: wrap;
+}
+.TodoForm label {
+	min-width: 100%;
+	margin-bottom: 0.5rem;
+	font-size: 1.3rem;
+}
+.TodoForm input {
+	flex-grow: 1;
+	border: none;
+	background-color: #f7f1f1;
+	padding: 0 1.5em;
+	font-size: initial;
+	outline: none;
+	border-radius: 2px;
+}
+.TodoForm button {
+	padding: 0 1.3rem;
+	border: none;
+	/* background-color: bisque;
+	color: black; */
+	background-color: rgba(0, 0, 0, 0.4);
+	color: bisque;
+	text-transform: uppercase;
 
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 2px;
+	margin-left: 5px;
+	cursor: pointer;
+	transition: background 0.2s ease-out;
+	letter-spacing: 1px;
+}
+.TodoForm button:hover {
+	background-color: bisque;
+	color: black;
+	border: 1.4px solid rgba(0, 0, 0, 0.8);
+	font-weight: 400;
+}
+.TodoForm input,
+.TodoForm button {
+	height: 2.5rem;
+	font-family: -apple-system, BlinkMacSystemFont, 'Poppins', sans-serif;
+	font-weight: 400;
+}
+.TodoForm button {
+	font-weight: 300;
+	letter-spacing: 1.5px;
+	outline: none;
+}
