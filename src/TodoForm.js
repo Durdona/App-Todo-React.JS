@@ -53,8 +53,8 @@ class TodoForm extends Component {
 					value={this.state.task}
 					onChange={this.handleChange}
 				/>
-				<p style={{ color: "salmon", padding: "1rem 0 1rem 0" }}>{this.state.error}</p>
 				<button>Add Todo</button>
+				<p style={{ color: "salmon", padding: "1rem 0 1rem 0" }}>{this.state.error}</p>
 			</form>
 		);
 	}

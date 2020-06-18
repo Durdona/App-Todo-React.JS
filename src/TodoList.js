@@ -82,8 +82,20 @@ class TodoList extends Component {
 		return (
 			<div className="TodoList">
 				<h1> Todo List</h1>
-				<TodoForm createTodo={this.create} />
 				<ul>{todos}</ul>
+				<TodoForm createTodo={this.create} />
+				<p
+					style={{
+						color: "white",
+						padding: "0.7rem 0 0 0",
+						fontWeight: "300",
+						fontSize: "1.1rem",
+						letterSpacing: "1px",
+						textAlign: "right"
+					}}
+				>
+					Todos left: {this.state.todos.filter((todo) => !todo.completed).length}
+				</p>
 			</div>
 		);
 	}
