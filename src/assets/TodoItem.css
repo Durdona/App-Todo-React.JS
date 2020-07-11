@@ -93,6 +93,7 @@ input[type=checkbox]:checked:after {
 	padding: 0 1.5em;
 	font-size: initial;
 	border-radius: 2px;
+	outline: none;
 }
 .TodoItem .Todo-edit-form button {
 	padding: 0 1.3rem;
